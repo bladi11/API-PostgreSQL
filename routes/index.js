@@ -12,8 +12,8 @@ module.exports = (app) => {
     router.put('/tickets/placa', ticketController.updateTicket);
     router.delete('/tickets/:id', ticketController.deleteTicket);
 
-    // Otras rutas existentes
-    // ...
+    // Respuesta Mongo
+    router.post('/tickets/estado', ticketController.handleMongoResponse);
 
     app.use('/', router);
 };
